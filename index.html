@@ -195,8 +195,8 @@
 
     <div class="form-container">
         <h2>Konfirmasi Kehadiran</h2>
-        <form action="https://wa.me/6287715254391?text=Saya%20akan%20hadir%20di%20acara%20pernikahan%20Eka%20dan%20Rizki%20pada%20pukul%2009.00%20wib.%20Semoga%20acara%20berjalan%20lancar!" method="get" target="_blank">
-            <input type="text" name="name" placeholder="Nama Anda" required>
+        <form id="confirmationForm">
+            <input type="text" id="name" name="name" placeholder="Nama Anda" required>
             <button type="submit">Konfirmasi Kehadiran</button>
         </form>
     </div>
@@ -206,10 +206,22 @@
 <button onclick="topFunction()" id="scrollBtn" title="Go to top">Top</button>
 
 <script>
-    // Mendapatkan tombol scroll
-    var mybutton = document.getElementById("scrollBtn");
+    // Fungsi untuk mengarahkan ke WhatsApp dengan nama yang dimasukkan
+    document.getElementById("confirmationForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        
+        var name = document.getElementById("name").value;
+        var message = "Saya%20akan%20hadir%20di%20acara%20pernikahan%20Eka%20dan%20Rizki%20pada%20pukul%2009.00%20wib.%20Semoga%20acara%20berjalan%20lancar!%0A%0ANama%20Peserta%3A%20" + encodeURIComponent(name);
+        
+        // URL WhatsApp untuk mengirim pesan otomatis
+        var whatsappURL = "https://wa.me/6287715254391?text=" + message;
+        
+        // Arahkan ke WhatsApp
+        window.open(whatsappURL, "_blank");
+    });
 
-    // Ketika pengguna scroll ke bawah 20px dari atas dokumen, tampilkan tombol
+    // Fungsi scroll to top
+    var mybutton = document.getElementById("scrollBtn");
     window.onscroll = function() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
             mybutton.style.display = "block";
@@ -218,7 +230,6 @@
         }
     };
 
-    // Ketika tombol diklik, scroll ke atas
     function topFunction() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
