@@ -4,158 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Undangan Pernikahan Eka & Rizki</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        /* Reset dan pengaturan dasar */
-        body, h1, h2, h3, p, input, button {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-        }
         body {
-            background: url('https://images.unsplash.com/photo-1569265957-32a0d1d9cfa0') no-repeat center center fixed;
-            background-size: cover;
-            color: #333;
-            padding: 0;
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        header {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 50px 20px;
+            padding: 0;
+            font-family: 'Quicksand', sans-serif;
+            background-image: url('https://www.example.com/background-image.jpg'); /* Ganti dengan URL gambar latar belakang yang harmonis */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
             text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 50px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .details {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        .details p {
+            margin: 10px 0;
+        }
+
+        .map-container {
+            margin-top: 40px;
+            position: relative;
+            height: 300px;
             width: 100%;
-            position: absolute;
-            top: 0;
-            z-index: 10;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        header h1 {
-            font-size: 3rem;
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
-        header h2 {
-            font-size: 2rem;
-            margin-top: 10px;
-        }
-        .content {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 30px;
-            width: 80%;
-            max-width: 800px;
-            border-radius: 10px;
-            margin-top: 100px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .content h2 {
-            color: #4CAF50;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        .date-time, .location {
-            margin-top: 15px;
-            font-size: 1.2rem;
-        }
-        .location img {
-            max-width: 100%;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-        .invitation-message {
-            font-size: 1.2rem;
-            color: #444;
-            margin-top: 20px;
-            text-align: justify;
-        }
-        .guest-list {
+
+        .invitation-form {
             margin-top: 30px;
-            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
         }
-        .guest-list input[type="text"] {
-            padding: 12px;
-            width: 70%;
-            margin-right: 10px;
-            font-size: 1rem;
+
+        .invitation-form input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 200px;
+            font-size: 16px;
+            border: none;
             border-radius: 5px;
-            border: 1px solid #ddd;
         }
-        .guest-list button {
-            padding: 12px 20px;
-            background-color: #4CAF50;
+
+        .invitation-form button {
+            background-color: #ff7b00;
             color: white;
+            padding: 10px 20px;
+            font-size: 16px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 1rem;
         }
-        .guest-list button:hover {
-            background-color: #45a049;
+
+        .invitation-form button:hover {
+            background-color: #e67e22;
         }
-        footer {
-            position: absolute;
-            bottom: 20px;
-            text-align: center;
-            width: 100%;
-            color: white;
-        }
-        footer p {
-            font-size: 1rem;
+
+        .quote {
+            font-size: 18px;
+            font-style: italic;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Undangan Pernikahan</h1>
-        <h2>Eka & Rizki</h2>
-    </header>
+<div class="container">
+    <h1>Undangan Pernikahan Eka & Rizki</h1>
 
-    <div class="content">
-        <h2>Dengan penuh kebahagiaan, kami mengundang Anda untuk merayakan pernikahan kami.</h2>
-
-        <div class="date-time">
-            <p><strong>Hari/Tanggal:</strong> Sabtu, 30 November 2024</p>
-            <p><strong>Waktu:</strong> Pukul 09:00 - Selesai</p>
-        </div>
-
-        <div class="location">
-            <p><strong>Tempat:</strong> Duman, Lombok Timur</p>
-            <p><strong>Lokasi di Google Maps:</strong></p>
-            <!-- Gambar Peta Lokasi -->
-            <img src="https://maps.googleapis.com/maps/api/staticmap?center=Duman%2C%20Lombok%20Timur&zoom=15&size=600x300&markers=color:red%7C-8.595071,116.436787&key=YOUR_API_KEY" alt="Lokasi Pernikahan">
-        </div>
-
-        <div class="invitation-message">
-            <p>“Dan di antara tanda-tanda kekuasaan-Nya adalah Dia menciptakan pasangan-pasangan untuk kalian dari jenis kalian sendiri, supaya kalian cenderung dan merasa tentram kepadanya, dan Dia menjadikan di antara kalian rasa kasih dan sayang.” (Q.S. Ar-Rum: 21)</p>
-            <p>Kami berharap kehadiran Anda untuk merayakan momen bersejarah ini bersama kami dalam kebahagiaan dan berkah dari Allah SWT.</p>
-        </div>
-
-        <div class="guest-list">
-            <h3>Daftar Kehadiran</h3>
-            <p>Silakan masukkan nama Anda untuk mengonfirmasi kehadiran:</p>
-            <input type="text" id="guestName" placeholder="Masukkan nama Anda">
-            <button onclick="confirmAttendance()">Kirim Kehadiran</button>
-        </div>
+    <div class="details">
+        <p>Dengan memohon rahmat Allah SWT, kami mengundang Anda untuk hadir di acara pernikahan kami:</p>
+        <p><strong>Eka</strong> & <strong>Rizki</strong></p>
+        <p>Tempat: Duman, mulai pukul 09.00 - selesai</p>
+        <p>Semoga Allah SWT meridhai acara ini dan memberikan keberkahan bagi kita semua.</p>
     </div>
 
-    <footer>
-        <p>Terima kasih atas kehadiran dan doa Anda. Semoga Allah SWT memberkahi pernikahan ini.</p>
-    </footer>
+    <div class="quote">
+        <p>"Dan di antara tanda-tanda kekuasaan-Nya, Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri agar kamu merasa tentram kepadanya, dan dijadikan-Nya di antara kamu rasa kasih sayang." (QS. Ar-Rum: 21)</p>
+    </div>
 
-    <script>
-        function confirmAttendance() {
-            var guestName = document.getElementById('guestName').value;
-            if (guestName.trim() === "") {
-                alert("Nama harus diisi!");
-                return;
-            }
-            var message = "Assalamualaikum, saya " + guestName + " akan hadir di pernikahan Eka & Rizki pada 30 November 2024.";
-            var waUrl = "https://wa.me/6287715254391?text=" + encodeURIComponent(message);
-            window.open(waUrl, "_blank");
-        }
-    </script>
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d63331.61638007436!2d110.3682679!3d-7.3231354!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sid!4v1636663743170!5m2!1sen!2sid" 
+        allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <div class="invitation-form">
+        <h2>Konfirmasi Kehadiran</h2>
+        <p>Harap konfirmasi kehadiran Anda melalui form ini:</p>
+        <form action="https://wa.me/6287715254391?text=Saya%20akan%20hadir%20di%20acara%20pernikahan%20Eka%20dan%20Rizki." method="get" target="_blank">
+            <input type="text" name="name" placeholder="Nama Anda" required>
+            <input type="text" name="message" placeholder="Pesan (Opsional)" >
+            <button type="submit">Konfirmasi Kehadiran</button>
+        </form>
+    </div>
+</div>
 
 </body>
 </html>
