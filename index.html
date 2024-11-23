@@ -11,10 +11,13 @@
             padding: 0;
             font-family: 'Quicksand', sans-serif;
             background-image: url('https://www.w3schools.com/w3images/wedding.jpg'); /* Gambar latar belakang dari online */
+            background-attachment: fixed;
             background-size: cover;
             background-position: center;
             color: #fff;
             text-align: center;
+            position: relative;
+            height: 100vh;
         }
 
         .container {
@@ -27,7 +30,17 @@
             color: #fff;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             font-weight: bold;
-            text-stroke: 1px #000; /* Garis tepi pada tulisan */
+            text-stroke: 1px #000;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .details {
@@ -35,10 +48,24 @@
             margin-top: 20px;
             font-weight: bold;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+            animation-delay: 0.5s;
         }
 
         .details p {
             margin: 10px 0;
+        }
+
+        .quote {
+            font-size: 18px;
+            font-style: italic;
+            margin-top: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+            animation-delay: 1s;
         }
 
         .map-container {
@@ -49,12 +76,16 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeInScale 1s forwards;
         }
 
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        @keyframes fadeInScale {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .form-container {
@@ -64,6 +95,10 @@
             border-radius: 10px;
             display: inline-block;
             text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+            animation-delay: 1.5s;
         }
 
         .form-container input[type="text"] {
@@ -83,16 +118,44 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
 
         .form-container button:hover {
             background-color: #e67e22;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-container input[type="text"]:focus {
+            outline: none;
+            box-shadow: 0 0 5px #ff7b00;
         }
 
         .quote {
             font-size: 18px;
             font-style: italic;
             margin-top: 30px;
+        }
+
+        #scrollBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #ff7b00;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        #scrollBtn:hover {
+            background-color: #e67e22;
         }
 
         @media (max-width: 768px) {
@@ -138,6 +201,29 @@
         </form>
     </div>
 </div>
+
+<!-- Scroll to Top Button -->
+<button onclick="topFunction()" id="scrollBtn" title="Go to top">Top</button>
+
+<script>
+    // Mendapatkan tombol scroll
+    var mybutton = document.getElementById("scrollBtn");
+
+    // Ketika pengguna scroll ke bawah 20px dari atas dokumen, tampilkan tombol
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    };
+
+    // Ketika tombol diklik, scroll ke atas
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
 
 </body>
 </html>
