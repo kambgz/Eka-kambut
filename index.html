@@ -225,7 +225,7 @@
         e.preventDefault();
         
         var name = document.getElementById("name").value;
-        var message = "Saya%20akan%20hadir%20di%20acara%20pernikahan%20Eka%20dan%20Rizki%20pada%20pukul%2009.00%20wib.%20Semoga%20acara%20berjalan%20lancar!%0A%0ANama%20Peserta%3A%20" + encodeURIComponent(name);
+        var message = "Saya%20akan%20hadir%20di%20acara%20pernikahan%20Eka%20dan%20Rizki%20pada%20pukul%2009.00%20wib.%20Semoga%20acara%20berjalan%20lancar%20dan%20diberkahi.%0A%0ANama%20Peserta%3A%20" + encodeURIComponent(name);
         
         // URL WhatsApp untuk mengirim pesan otomatis
         var whatsappURL = "https://wa.me/6287715254391?text=" + message;
@@ -248,4 +248,6 @@
 
     function topFunction() {
         document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0
+        document.documentElement.scrollTop = 0;
+    }
+</script>
