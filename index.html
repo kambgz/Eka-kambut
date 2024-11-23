@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Quicksand', sans-serif;
-            background-image: url('https://www.example.com/background-image.jpg'); /* Ganti dengan URL gambar latar belakang yang harmonis */
+            background-image: url('https://www.example.com/background-image.jpg'); /* Ganti dengan URL gambar latar belakang */
             background-size: cover;
             background-position: center;
             color: #fff;
@@ -64,7 +64,7 @@
         .invitation-form input[type="text"] {
             padding: 10px;
             margin: 10px 0;
-            width: 200px;
+            width: 250px;
             font-size: 16px;
             border: none;
             border-radius: 5px;
@@ -89,6 +89,42 @@
             font-style: italic;
             margin-top: 30px;
         }
+
+        .form-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-container input {
+            margin: 10px;
+            padding: 10px;
+            width: 250px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .form-container button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #218838;
+        }
+
     </style>
 </head>
 <body>
@@ -108,16 +144,14 @@
     </div>
 
     <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d63331.61638007436!2d110.3682679!3d-7.3231354!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sid!4v1636663743170!5m2!1sen!2sid" 
-        allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://maps.google.com/maps?q=Duman%2C%20Indonesia&z=15&output=embed" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
-    <div class="invitation-form">
+    <div class="form-container">
         <h2>Konfirmasi Kehadiran</h2>
-        <p>Harap konfirmasi kehadiran Anda melalui form ini:</p>
         <form action="https://wa.me/6287715254391?text=Saya%20akan%20hadir%20di%20acara%20pernikahan%20Eka%20dan%20Rizki." method="get" target="_blank">
             <input type="text" name="name" placeholder="Nama Anda" required>
-            <input type="text" name="message" placeholder="Pesan (Opsional)" >
+            <input type="text" name="message" placeholder="Pesan (Opsional)">
             <button type="submit">Konfirmasi Kehadiran</button>
         </form>
     </div>
