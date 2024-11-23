@@ -21,20 +21,20 @@
             padding: 20px;
         }
 
-        h1, .details p, .quote p {
-            color: #333; /* Mengubah warna teks menjadi gelap */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Menambahkan garis tepi agar lebih terlihat */
-        }
-
         h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: 50px;
-            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+            font-size: 60px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            font-weight: bold;
+            text-stroke: 1px #000; /* Garis tepi pada tulisan */
         }
 
         .details {
             font-size: 20px;
             margin-top: 20px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
         }
 
         .details p {
@@ -132,9 +132,8 @@
 
     <div class="form-container">
         <h2>Konfirmasi Kehadiran</h2>
-        <form action="https://wa.me/6287715254391?text=Saya%20akan%20hadir%20di%20acara%20pernikahan%20Eka%20dan%20Rizki." method="get" target="_blank">
+        <form action="https://wa.me/6287715254391?text=Saya%20akan%20hadir%20di%20acara%20pernikahan%20Eka%20dan%20Rizki%20pada%20pukul%2009.00%20wib.%20Semoga%20acara%20berjalan%20lancar!" method="get" target="_blank">
             <input type="text" name="name" placeholder="Nama Anda" required>
-            <input type="text" name="message" placeholder="Pesan (Opsional)">
             <button type="submit">Konfirmasi Kehadiran</button>
         </form>
     </div>
