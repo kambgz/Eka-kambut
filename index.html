@@ -5,194 +5,125 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Undangan Pernikahan Eka & Rizki</title>
   <style>
-    /* Reset default styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Arial', sans-serif;
-      background: url('https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080') no-repeat center center/cover;
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.7);
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    header {
-      text-align: center;
-      padding: 20px;
-      background: linear-gradient(to right, #4caf50, #81c784);
-      color: #fff;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-    }
-
-    .content {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .content h2 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-      color: #c8e6c9;
-    }
-
-    .content p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-
-    .confirmation {
-      text-align: center;
-      margin: 30px 0;
-    }
-
-    .confirmation form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .confirmation input {
-      padding: 10px;
-      width: 100%;
-      max-width: 400px;
-      margin-bottom: 10px;
-      border: 1px solid #c8e6c9;
-      border-radius: 5px;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
       color: #333;
+      text-align: center;
+      padding: 50px;
     }
 
-    .confirmation button {
-      padding: 10px 20px;
+    h1 {
+      color: #2c3e50;
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #8e44ad;
+      font-size: 2em;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    .button {
       background-color: #4caf50;
-      color: #fff;
+      color: white;
+      padding: 10px 20px;
       border: none;
       border-radius: 5px;
-      font-size: 1rem;
+      font-size: 1.2em;
       cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .confirmation button:hover {
-      background-color: #81c784;
-    }
-
-    .map-container {
       margin-top: 20px;
-      text-align: center;
     }
 
-    .map-container iframe {
-      width: 100%;
+    .button:hover {
+      background-color: #45a049;
+    }
+
+    #map {
       height: 400px;
-      border: none;
-      border-radius: 10px;
+      width: 100%;
+      margin-top: 30px;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.5);
+    .music-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #4caf50;
       color: #fff;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-
-    footer p {
-      font-size: 1rem;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      z-index: 1000;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
   <!-- Background Sound -->
   <audio id="backgroundMusic" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_770bb148b4.mp3" type="audio/mpeg">
+    <source src="https://drive.google.com/uc?export=download&id=1_g6aIYw7ZTUeeAzNIDMe5tatpO1Pm8yT" type="audio/mpeg">
     Browser Anda tidak mendukung elemen audio.
   </audio>
-  <button onclick="playMusic()" style="position: fixed; top: 20px; left: 20px; background: #4caf50; color: #fff; padding: 10px; border: none; border-radius: 5px; z-index: 1000; cursor: pointer;">
-    Putar Musik
-  </button>
+  
+  <!-- Button to Play Music -->
+  <button class="music-btn" onclick="playMusic()">Putar Musik</button>
 
-  <div class="container">
-    <header>
-      <h1>Undangan Pernikahan</h1>
-      <p>“Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu merasa tenteram kepadanya. Dan dijadikan-Nya di antaramu rasa kasih dan sayang.” <br>(QS. Ar-Rum: 21)</p>
-    </header>
+  <h1>Undangan Pernikahan</h1>
+  <h2>Eka & Rizki</h2>
+  <p>Dengan penuh rasa syukur, kami mengundang Anda untuk hadir dalam acara pernikahan kami.</p>
+  
+  <p>Hari/Tanggal: 10 Januari 2025</p>
+  <p>Waktu: 10:00 WIB</p>
+  <p>Tempat: Duman</p>
 
-    <section class="content">
-      <h2>Kepada Yth.</h2>
-      <p>
-        Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta’ala, kami bermaksud menyelenggarakan akad dan walimatul ursy:
-      </p>
-      <h2>Eka & Rizki</h2>
-      <p>
-        Jumat, 10 Januari 2025 <br>
-        Bertempat di: <strong>Duman</strong>
-      </p>
-      <p>
-        Kehadiran dan doa restu Anda merupakan kebahagiaan bagi kami. <br>
-        “Semoga Allah memberkahi kalian dan mengaruniakan atas kalian keberkahan dan mengumpulkan kalian berdua dalam kebaikan.”
-      </p>
-    </section>
+  <!-- Konfirmasi Kehadiran -->
+  <p>Mohon konfirmasi kehadiran Anda dengan menekan tombol di bawah ini:</p>
+  <a href="https://wa.me/?text=Assalamualaikum,%20Saya%20akan%20hadir%20di%20pernikahan%20Eka%20dan%20Rizki" target="_blank">
+    <button class="button">Konfirmasi Kehadiran</button>
+  </a>
 
-    <section class="confirmation">
-      <h2>Konfirmasi Kehadiran</h2>
-      <form id="rsvpForm">
-        <input type="text" id="name" name="name" placeholder="Masukkan Nama Anda" required>
-        <button type="submit">Kirim Konfirmasi</button>
-      </form>
-    </section>
-
-    <section class="map-container">
-      <h2>Lokasi Pernikahan</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.318084382343!2d116.15270751478391!3d-8.653938993774053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdbf4ef768c917%3A0x3c90c22b2c2b30ed!2sDuman!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" allowfullscreen loading="lazy"></iframe>
-    </section>
-
-    <footer>
-      <p>© 2025 Eka & Rizki. Semua hak dilindungi.</p>
-    </footer>
-  </div>
+  <!-- Google Map Embed -->
+  <div id="map"></div>
 
   <script>
     function playMusic() {
       const audio = document.getElementById('backgroundMusic');
-      audio.play();
+      audio.play()
+        .then(() => {
+          alert("Musik mulai diputar.");
+        })
+        .catch((error) => {
+          alert("Musik gagal diputar. Pastikan volume perangkat aktif.");
+          console.error(error);
+        });
     }
 
-    document.getElementById('rsvpForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const name = document.getElementById('name').value;
-
-      const whatsappNumber = "6281234567890";
-      const message = `Halo, Saya ${name}. Saya mengkonfirmasi akan hadir di acara pernikahan Eka & Rizki.`;
-
-      const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-      window.open(whatsappLink, "_blank");
-      document.getElementById('rsvpForm').reset();
-    });
+    // Inisialisasi peta dengan Google Maps API
+    function initMap() {
+      const lokasi = { lat: -8.2233, lng: 115.1989 }; // Koordinat tempat pernikahan
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 15,
+        center: lokasi,
+      });
+      const marker = new google.maps.Marker({
+        position: lokasi,
+        map: map,
+        title: "Tempat Pernikahan",
+      });
+    }
   </script>
+
+  <!-- Google Maps API Script -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+    async
+    defer
+  ></script>
 </body>
 </html>
