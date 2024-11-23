@@ -6,66 +6,105 @@
     <title>Undangan Pernikahan Eka & Rizki</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background: url('https://images.unsplash.com/photo-1521747116042-5a810fda9664') no-repeat center center fixed;
-            background-size: cover; /* Agar gambar latar belakang menutupi seluruh halaman */
-            color: #333;
+            font-family: 'Georgia', serif;
+            background: url('https://images.unsplash.com/photo-1569265957-32a0d1d9cfa0') no-repeat center center fixed;
+            background-size: cover;
             margin: 0;
             padding: 0;
+            color: #555;
         }
+
         header {
-            background-color: rgba(76, 175, 80, 0.8); /* Memberikan latar belakang transparan */
+            text-align: center;
+            padding: 40px 20px;
             color: white;
-            padding: 20px;
-            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6); /* Transparan hitam */
+            border-bottom: 5px solid #fff;
         }
+
         header h1 {
+            font-size: 3rem;
             margin: 0;
-            font-size: 2.5rem;
         }
+
+        header h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-top: 10px;
+        }
+
         .content {
-            padding: 20px;
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.8); /* Membuat latar belakang konten sedikit transparan */
-            margin-top: 20px;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
+            text-align: center;
         }
+
         .content h2 {
             font-size: 2rem;
-            color: #333;
+            color: #4CAF50;
+            margin-bottom: 20px;
         }
-        .location, .date-time {
-            margin-top: 20px;
+
+        .date-time, .location {
+            margin: 20px 0;
             font-size: 1.2rem;
         }
+
         .location a {
             color: #4CAF50;
             text-decoration: none;
+            font-weight: bold;
         }
+
         .invitation-message {
-            margin-top: 30px;
-            font-size: 1.1rem;
-            color: #555;
-            text-align: justify;
-            padding: 0 20px;
+            font-size: 1.2rem;
+            color: #444;
+            margin-bottom: 30px;
         }
+
+        .map-container {
+            margin-top: 40px;
+            text-align: center;
+        }
+
         .guest-list {
             margin-top: 30px;
         }
+
         .guest-list input[type="text"] {
             padding: 10px;
             width: 60%;
             margin-right: 10px;
+            font-size: 1rem;
         }
+
         .guest-list button {
             padding: 10px 20px;
             background-color: #4CAF50;
             color: white;
             border: none;
             cursor: pointer;
+            font-size: 1rem;
         }
+
         .guest-list button:hover {
             background-color: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
         }
     </style>
 </head>
@@ -73,7 +112,7 @@
 
     <header>
         <h1>Undangan Pernikahan</h1>
-        <h2> Eka & Rizki </h2>
+        <h2>Eka & Rizki</h2>
     </header>
 
     <div class="content">
@@ -100,6 +139,11 @@
             <input type="text" id="guestName" placeholder="Masukkan nama Anda">
             <button onclick="confirmAttendance()">Kirim Kehadiran</button>
         </div>
+
+        <div class="map-container">
+            <h3>Lokasi Pernikahan:</h3>
+            <iframe src="https://maps.google.com/maps?q=Duman%2C%20Lombok%20Timur&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
     </div>
 
     <script>
@@ -114,5 +158,10 @@
             window.open(waUrl, "_blank");
         }
     </script>
+
+    <footer>
+        <p>Terima kasih atas kehadiran dan doa Anda. Semoga Allah SWT memberkahi pernikahan ini.</p>
+    </footer>
+
 </body>
 </html>
