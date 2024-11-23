@@ -14,15 +14,16 @@
 
     body {
       font-family: 'Arial', sans-serif;
-      background: url('https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080') no-repeat center center/cover;
+      background: url('https://source.unsplash.com/1600x900/?wedding,romantic') no-repeat center center fixed;
+      background-size: cover;
       color: #fff;
-      overflow-x: hidden;
+      line-height: 1.6;
     }
 
     .container {
       max-width: 900px;
       margin: 40px auto;
-      padding: 20px;
+      padding: 30px;
       background: rgba(0, 0, 0, 0.7);
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -31,14 +32,14 @@
     header {
       text-align: center;
       padding: 20px;
-      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      background: #ff7e5f;
       color: #fff;
       border-radius: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 10px;
     }
 
@@ -46,40 +47,67 @@
       font-size: 1.2rem;
     }
 
+    .couple {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .couple h2 {
+      font-size: 2rem;
+      color: #6a1b9a;
+    }
+
+    .couple p {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .event-details {
+      margin-bottom: 30px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      color: #333;
+      border-radius: 8px;
+    }
+
+    .event-details h2 {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .event-details p {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
     .confirmation {
       text-align: center;
       margin: 30px 0;
     }
 
-    .confirmation form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
     .confirmation input {
       padding: 10px;
-      width: 100%;
+      width: 80%;
       max-width: 400px;
-      margin-bottom: 10px;
-      border: 1px solid #ffddc1;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
       border-radius: 5px;
-      color: #333;
     }
 
     .confirmation button {
       padding: 10px 20px;
-      background-color: #ff7e5f;
+      background-color: #6a1b9a;
       color: #fff;
       border: none;
       border-radius: 5px;
-      font-size: 1rem;
+      font-size: 1.1rem;
       cursor: pointer;
       transition: background-color 0.3s;
     }
 
     .confirmation button:hover {
-      background-color: #feb47b;
+      background-color: #4a148c;
     }
 
     .map-container {
@@ -97,14 +125,28 @@
     footer {
       text-align: center;
       padding: 20px;
-      background: rgba(0, 0, 0, 0.5);
+      background: #6a1b9a;
       color: #fff;
       border-radius: 10px;
-      margin-top: 20px;
+      margin-top: 30px;
     }
 
     footer p {
       font-size: 1rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      .event-details h2, .confirmation h2 {
+        font-size: 1.5rem;
+      }
+
+      .confirmation input {
+        width: 90%;
+      }
     }
   </style>
 </head>
@@ -112,16 +154,25 @@
   <div class="container">
     <header>
       <h1>Undangan Pernikahan</h1>
-      <p>Dengan segala kerendahan hati, kami mengundang Anda untuk hadir dalam acara pernikahan kami yang insya Allah akan dilaksanakan pada:</p>
+      <p>Dengan penuh kebahagiaan, kami mengundang Anda untuk hadir di acara pernikahan kami</p>
     </header>
+
+    <section class="couple">
+      <h2>Eka & Rizki</h2>
+      <p>"Dan di antara tanda-tanda kekuasaan-Nya adalah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri..." (QS. Ar-Rum: 21)</p>
+    </section>
+
+    <section class="event-details">
+      <h2>Detail Acara</h2>
+      <p><strong>Hari/Tanggal:</strong> Sabtu, 10 Januari 2025</p>
+      <p><strong>Waktu:</strong> 10:00 WIB - Selesai</p>
+      <p><strong>Tempat:</strong> Duman</p>
+    </section>
 
     <section class="confirmation">
       <h2>Konfirmasi Kehadiran</h2>
-      <p>"Dan di antara tanda-tanda kekuasaan-Nya, Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, agar kamu merasa tentram dan damai bersamanya, dan Dia menjadikan di antara kamu rasa kasih sayang dan cinta." <br>– (QS. Ar-Rum: 21)</p>
-      <form id="rsvpForm">
-        <input type="text" id="name" name="name" placeholder="Masukkan Nama Anda" required>
-        <button type="submit">Kirim Konfirmasi</button>
-      </form>
+      <input type="text" id="name" placeholder="Masukkan Nama Anda" required>
+      <button onclick="sendRSVP()">Kirim Konfirmasi</button>
     </section>
 
     <section class="map-container">
@@ -130,31 +181,22 @@
     </section>
 
     <footer>
-      <p>© 2025 Eka & Rizki. Semua hak dilindungi. Semoga Allah memberkahi pernikahan kami.</p>
+      <p>© 2025 Eka & Rizki. Semua hak dilindungi.</p>
     </footer>
   </div>
 
   <script>
-    document.getElementById('rsvpForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-
+    function sendRSVP() {
       const name = document.getElementById('name').value;
-
-      // Nomor WhatsApp tujuan (ganti dengan nomor Anda)
-      const whatsappNumber = "6281234567890";
-
-      // Format pesan WhatsApp
-      const message = `Assalamualaikum, Saya ${name}. Saya mengkonfirmasi akan hadir di acara pernikahan Eka & Rizki.`;
-
-      // Buat link WhatsApp
-      const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-      // Arahkan ke WhatsApp
-      window.open(whatsappLink, "_blank");
-
-      // Reset form
-      document.getElementById('rsvpForm').reset();
-    });
+      if (name) {
+        const message = `Halo, saya ${name} dan ingin mengonfirmasi kehadiran di acara pernikahan Eka & Rizki pada 10 Januari 2025.`;
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/6287715254391?text=${encodedMessage}`;
+        window.open(whatsappUrl, '_blank');
+      } else {
+        alert('Mohon masukkan nama Anda.');
+      }
+    }
   </script>
 </body>
 </html>
