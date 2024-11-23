@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Quicksand', sans-serif;
-            background-image: url('https://www.example.com/background-image.jpg'); /* Ganti dengan URL gambar latar belakang */
+            background-image: url('https://www.example.com/your-image.jpg'); /* Ganti dengan gambar latar belakang yang harmonis */
             background-size: cover;
             background-position: center;
             color: #fff;
@@ -53,15 +53,16 @@
             border: none;
         }
 
-        .invitation-form {
+        .form-container {
             margin-top: 30px;
             background-color: rgba(0, 0, 0, 0.6);
             padding: 20px;
             border-radius: 10px;
             display: inline-block;
+            text-align: center;
         }
 
-        .invitation-form input[type="text"] {
+        .form-container input[type="text"] {
             padding: 10px;
             margin: 10px 0;
             width: 250px;
@@ -70,7 +71,7 @@
             border-radius: 5px;
         }
 
-        .invitation-form button {
+        .form-container button {
             background-color: #ff7b00;
             color: white;
             padding: 10px 20px;
@@ -80,7 +81,7 @@
             cursor: pointer;
         }
 
-        .invitation-form button:hover {
+        .form-container button:hover {
             background-color: #e67e22;
         }
 
@@ -90,41 +91,19 @@
             margin-top: 30px;
         }
 
-        .form-container {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 40px;
+            }
 
-        .form-container form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+            .form-container input[type="text"] {
+                width: 200px;
+            }
 
-        .form-container input {
-            margin: 10px;
-            padding: 10px;
-            width: 250px;
-            font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
+            .map-container {
+                height: 250px;
+            }
         }
-
-        .form-container button {
-            background-color: #28a745;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .form-container button:hover {
-            background-color: #218838;
-        }
-
     </style>
 </head>
 <body>
