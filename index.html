@@ -31,7 +31,7 @@
     header {
       text-align: center;
       padding: 20px;
-      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      background: linear-gradient(to right, #4caf50, #81c784);
       color: #fff;
       border-radius: 10px;
       margin-bottom: 20px;
@@ -54,7 +54,7 @@
     .content h2 {
       font-size: 1.8rem;
       margin-bottom: 10px;
-      color: #ffddc1;
+      color: #c8e6c9;
     }
 
     .content p {
@@ -79,14 +79,14 @@
       width: 100%;
       max-width: 400px;
       margin-bottom: 10px;
-      border: 1px solid #ffddc1;
+      border: 1px solid #c8e6c9;
       border-radius: 5px;
       color: #333;
     }
 
     .confirmation button {
       padding: 10px 20px;
-      background-color: #ff7e5f;
+      background-color: #4caf50;
       color: #fff;
       border: none;
       border-radius: 5px;
@@ -96,7 +96,7 @@
     }
 
     .confirmation button:hover {
-      background-color: #feb47b;
+      background-color: #81c784;
     }
 
     .map-container {
@@ -127,22 +127,24 @@
 </head>
 <body>
   <!-- Background Sound -->
-  <audio id="backgroundMusic" autoplay loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+  <audio id="backgroundMusic" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_770bb148b4.mp3" type="audio/mpeg">
     Browser Anda tidak mendukung elemen audio.
   </audio>
+  <button onclick="playMusic()" style="position:fixed; top:20px; left:20px; z-index:1000; background:#4caf50; color:#fff; padding:10px; border:none; border-radius:5px; cursor:pointer;">
+    Putar Musik
+  </button>
 
   <div class="container">
     <header>
       <h1>Undangan Pernikahan</h1>
-      <p>Dengan penuh kebahagiaan, kami mengundang Anda untuk hadir di hari istimewa kami</p>
+      <p>“Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu merasa tenteram kepadanya. Dan dijadikan-Nya di antaramu rasa kasih dan sayang.” <br>(QS. Ar-Rum: 21)</p>
     </header>
 
     <section class="content">
       <h2>Kepada Yth.</h2>
       <p>
-        "Kebahagiaan kami tidak akan sempurna tanpa kehadiran dan doa restu Anda. <br>
-        Dengan penuh rasa syukur kepada Tuhan Yang Maha Esa, kami bermaksud menyelenggarakan acara pernikahan kami:"
+        Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta’ala, kami bermaksud menyelenggarakan akad dan walimatul ursy:
       </p>
       <h2>Eka & Rizki</h2>
       <p>
@@ -150,7 +152,8 @@
         Bertempat di: <strong>Duman</strong>
       </p>
       <p>
-        "Semoga kehadiran Anda memberikan keberkahan dalam perjalanan baru kami sebagai pasangan suami istri."
+        Kehadiran dan doa restu Anda merupakan kebahagiaan bagi kami. <br>
+        “Semoga Allah memberkahi kalian dan mengaruniakan atas kalian keberkahan dan mengumpulkan kalian berdua dalam kebaikan.”
       </p>
     </section>
 
@@ -173,24 +176,21 @@
   </div>
 
   <script>
+    function playMusic() {
+      const audio = document.getElementById('backgroundMusic');
+      audio.play();
+    }
+
     document.getElementById('rsvpForm').addEventListener('submit', function(e) {
       e.preventDefault();
 
       const name = document.getElementById('name').value;
 
-      // Nomor WhatsApp tujuan (ganti dengan nomor Anda)
       const whatsappNumber = "6287715254391";
-
-      // Format pesan WhatsApp
       const message = `Halo, Saya ${name}. Saya mengkonfirmasi akan hadir di acara pernikahan Eka & Rizki.`;
 
-      // Buat link WhatsApp
       const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-      // Arahkan ke WhatsApp
       window.open(whatsappLink, "_blank");
-
-      // Reset form
       document.getElementById('rsvpForm').reset();
     });
   </script>
